@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate AI images using DALL-E 3">
+  <title>DALL·E 3 Image Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/bson@4.7.2/dist/bson.browser.umd.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>DALL·E 3 Generator</h1>
+    
+    <div id="output" class="output"></div>
+    <div id="status" class="status"></div>
+    <div id="loader" class="loader hidden">Generating image...</div>
+    
+    <form id="imageForm">
+      <div class="form-row">
+        <label>
+          Size:
+          <select id="size">
+            <option value="1024x1024">Square (1024×1024)</option>
+            <option value="1792x1024">Landscape (1792×1024)</option>
+            <option value="1024x1792">Portrait (1024×1792)</option>
+          </select>
+        </label>
+        <label>
+          Quantity:
+          <select id="n">
+            <option value="1">1</option>
+            <option value="2" disabled>2</option>
+            <option value="3" disabled>3</option>
+            <option value="4" disabled>4</option>
+          </select>
+        </label>
+      </div>
+      
+      <label class="prompt-label">
+        Prompt:
+        <textarea id="prompt" placeholder="Enter your prompt here. Be descriptive for best results." required></textarea>
+      </label>
+      
+      <div class="examples-container">
+        <details>
+          <summary>Example prompts (click to expand)</summary>
+          <div class="example-list">
+            <div class="example-item">
+              <span title="A photorealistic cityscape of a futuristic Tokyo at night with neon lights, flying cars, and holographic advertisements">
+                A photorealistic cityscape of a futuristic Tokyo at night with neon...
+              </span>
+              <button type="button" class="example-prompt" data-prompt="A photorealistic cityscape of a futuristic Tokyo at night with neon lights, flying cars, and holographic advertisements">Use</button>
+            </div>
+            
+            <div class="example-item">
+              <span title="A detailed oil painting of a medieval castle on a cliff during sunset with dragons flying overhead">
+                A detailed oil painting of a medieval castle on a cliff during sunset...
+              </span>
+              <button type="button" class="example-prompt" data-prompt="A detailed oil painting of a medieval castle on a cliff during sunset with dragons flying overhead">Use</button>
+            </div>
+            
+            <div class="example-item">
+              <span title="A surreal digital artwork of a cosmic library where books float between shelves, with planets and galaxies visible through large windows">
+                A surreal digital artwork of a cosmic library where books float between...
+              </span>
+              <button type="button" class="example-prompt" data-prompt="A surreal digital artwork of a cosmic library where books float between shelves, with planets and galaxies visible through large windows">Use</button>
+            </div>
+          </div>
+        </details>
+      </div>
+      
+      <div class="keyboard-hint">Press Ctrl+Enter to generate</div>
+      
+      <div class="form-actions">
+        <button type="submit">Generate</button>
+        <button type="button" id="resetBtn" class="reset-btn">Reset</button>
+      </div>
+    </form>
+  </div>
+  
+  <footer>
+    <p>&copy; powered by OPEN AI DALLE3</p>
+  </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
