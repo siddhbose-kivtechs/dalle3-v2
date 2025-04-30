@@ -8,7 +8,7 @@
       const resetBtn = document.getElementById("resetBtn");
       
       // API Configuration
-      const API_ENDPOINT = "http://localhost:4000/api/image/dalle3/bson";
+      const API_ENDPOINT = "https://dalle-backend.kneotech.cloud/api/image/dalle3/bson";
       
       // Get the original input element
       let promptInput = document.getElementById("prompt");
